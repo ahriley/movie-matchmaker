@@ -16,7 +16,7 @@ def load_ratings(filename=None,tstamp=False):
     return df
 
 # movies.csv -- 'movieId' has 'title' and 'genres', 27,278 movies
-# note: flat=False reads processed pickle file with genre data as cols
+# NOTE: flat=False reads processed pickle file with genre data as cols
 def load_movies(filename=None,flat=False):
     if filename is None:
         filename = DATA_DIR+'movies.csv'
