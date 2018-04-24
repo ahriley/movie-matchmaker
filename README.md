@@ -1,5 +1,13 @@
 # movie-matchmaker
 
+## Things to do from here
+* figure out why Cosine really didn't work well
+* apply Top-$k$ collaborative filtering (with both methods?)
+    * code MSE as a comparison between multiple models
+* move some of these functions around (apply to Pearson and then shove into utils)
+* clean out utils.py? (extra loading functions aren't really super helpful)
+* Exploring data: make interesting plots like distribution of # of ratings for movies and users
+
 ## Requirements
 * assumes the [MovieLens dataset](https://grouplens.org/datasets/movielens/20m/) is downloaded and its contents are set up in the same directory as the code in a folder named `data/` (this can be renamed but to do so the `DATA_DIR` needs to be set appropriately in `utils.py`)
 * `numpy`, `pandas`, `matplotlib`

@@ -1,5 +1,5 @@
 # large data files that can be downloaded separately
-data/
+data/full-dataset
 
 # don't need to see this
 practice.py
