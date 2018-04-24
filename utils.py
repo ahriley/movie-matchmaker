@@ -5,7 +5,7 @@ from sklearn.metrics import mean_squared_error
 def cosine_sim(df):
     vals = df.values
     sim = vals @ vals.T
-    norms = np.sqrt(np.diagonal(sim))
+    norms = np.array([np.sqrt(np.diagonal(sim))])
     return sim / norms / norms.T
 
 def mse(pred, actual):
