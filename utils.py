@@ -14,13 +14,13 @@ def mse(pred, actual):
     return mean_squared_error(pred, actual)
 
 def predict_full(ratings, weights):
-    prediction = weights.dot(ratings) / np.array([np.abs(weights).sum(axis=1)]).T
-    return pd.DataFrame(data=prediction, index=ratings.index, columns=ratings.columns)
+    pred = weights.dot(ratings) / np.array([np.abs(weights).sum(axis=1)]).T
+    return pd.DataFrame(data=pred, index=ratings.index, columns=ratings.columns)
 
 # TODO: don't go through numpy, just use pandas
 def train_test_split(df, empty, testfrac=0.2):
     if np.isnan(empty):
-        df.replace(to_replace=np.nan, value=0.0, inplace=True)
+        df = df.fillna(value=0.0)
     elif empty != 0.0:
         raise NotImplementedError("'empty' must be 0.0 or np.nan")
         
