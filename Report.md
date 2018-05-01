@@ -37,7 +37,7 @@ where the weights _sim(x,u)_ are the computed similarities between the users _x_
 #### Pearson Correlation Coefficient
 When treating the users’ ratings as a vectors, it is easy to determine their similarity using the Pearson correlation coefficient. Just as the 2D version measures the correlation of two 1-D vectors, the Pearson correlation measures the covariance of two _m_-D vectors containing two separate user’s ratings. The Pearson correlation coefficient is given by:
 
-similP(x,y)=iIxy(rx,i -rx) (ry,i -ry)iIxy(rx,i -rx)2 iIxy(ry,i -ry)2 
+![equation](http://latex.codecogs.com/gif.latex?%5Cdpi%7B150%7D%20sim_%7BP%7D%28x%2Cy%29%20%3D%20%5Cfrac%7B%5Csum_%7Bi%5Cin%20I_%7Bxy%7D%7D%28r_%7Bx%2Ci%7D-%5Coverline%7Br_%7Bx%7D%7D%29%28r_%7By%2Ci%7D-%5Coverline%7Br_%7By%7D%7D%29%7D%7B%5Csqrt%7B%5Csum_%7Bi%5Cin%20I_%7Bxy%7D%7D%28r_%7Bx%2Ci%7D-%5Coverline%7Br_%7Bx%7D%7D%29%5E%7B2%7D%7D%5Csqrt%7B%5Csum_%7Bi%5Cin%20I_%7Bxy%7D%7D%28r_%7By%2Ci%7D-%5Coverline%7Br_%7By%7D%7D%29%5E%7B2%7D%7D%7D)
 
 where _x_ and _y_ are different users, _I<sub>xy</sub>_ contains the movies that users x and y both rated, _r<sub>x,i</sub>_ and _r<sub>y,i</sub>_  are the ratings given to movie _i_ by user _x_ and _y_, respectively, and _r<sub>x</sub>_, _r<sub>y</sub>_ is the mean rating over all movies in set Ixy  given by user x, y.
 
