@@ -62,7 +62,7 @@ To evaluate the effectiveness of our algorithm, we compute the mean squared erro
 
 ![equation](http://latex.codecogs.com/gif.latex?%5Cdpi%7B150%7D%20%5Cmathrm%7BMSE%7D%20%3D%20%5Cfrac%7B1%7D%7Bn%7D%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%28r_%7B%5Cmathrm%7Bpred%7D%2Ci%7D%20-%20r_%7Bi%7D%29)
 
-between predicted ratings and the isolated test sample. As highlighted below, we find small differences between weight methods and marginal improvement from implementing top-k filtering. 
+between predicted ratings _r_<sub>pred,_i_</sub> and the isolated test sample ratings _r_<sub>_i_</sub>. As highlighted below, we find small differences between weight methods and marginal improvement from implementing top-k filtering. 
 
 #### Comparing weights
 If one chose the mean rating (2.5) of the range of rating values (0.5-5) as the predicted rating for a uniformly distributed set of test ratings, one would expect a MSE of ~2.125. The Pearson correlation similarity yielded an MSE of ~0.9905, which beats the constant guessing by about a rating value of 1. Meanwhile, the cosine similarity yielded an MSE of ~0.9645, slightly better than with the Pearson correlation similarity. 
