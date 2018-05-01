@@ -65,7 +65,13 @@ To evaluate the effectiveness of our algorithm, we compute the mean squared erro
 between predicted ratings _r_<sub>pred,_i_</sub> and the isolated test sample ratings _r_<sub>_i_</sub>. As highlighted below, we find small differences between weight methods and marginal improvement from implementing top-k filtering. 
 
 #### Comparing weights
-If one chose the mean rating (2.5) of the range of rating values (0.5-5) as the predicted rating for a uniformly distributed set of test ratings, one would expect a MSE of ~2.125. The Pearson correlation similarity yielded an MSE of ~0.9905, which beats the constant guessing by about a rating value of 1. Meanwhile, the cosine similarity yielded an MSE of ~0.9645, slightly better than with the Pearson correlation similarity. 
+If one chose the mean rating (2.5) of the range of rating values (0.5-5) as the predicted rating for a uniformly distributed set of test ratings, one would expect a MSE of ~2.125. The Pearson correlation similarity yielded an MSE of ~0.9905, (see Figure 1) 
+
+![figure 1](https://github.com/stringkm/movie-matchmaker/blob/master/figures/pearson_pred_updated.png)
+
+which beats the constant guessing by about a rating value of 1. Meanwhile, the cosine similarity yielded an MSE of ~0.9645, (see Figure 2) slightly better than with the Pearson correlation similarity. 
+
+![figure 2](https://github.com/stringkm/movie-matchmaker/blob/master/figures/cosine_pred_updated.png)
 
 #### Improvements from top-k
 We find that implementing top-k filtering yields a small improvement on the MSE for both methods of computing similarity between users. For Pearson correlation similarity, the minimum MSE of ~0.947 occurs for _k_=400, while for cosine similarity the minimum MSE of ~0.935 occurs for _k_=300. We note that as _k_ gets smaller the MSE increases at a much greater rate for Pearson correlation similarity than it does for cosine similarity.
