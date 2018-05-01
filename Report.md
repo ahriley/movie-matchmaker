@@ -29,13 +29,16 @@ To evaluate the effectiveness of our methods, we split the ratings data into tra
 In collaborative filtering, it is convenient to model a user’s movie ratings as a _1 x m_ vector in a highly dimensional space ℝ<sup>m</sup> (_m_=number of movies available to rate). Once each user is modeled as a vector, one can calculate the similarity between different users based on the element values of their associated vectors. For _n_ users, all of the user’s ratings combined together form a _n x m_ matrix.
 
 To predict the rating a user would give a particular movie, we compute a weighted average of all the ratings by other users for that movie:
+
 ![equation](http://latex.codecogs.com/gif.latex?%5Cdpi%7B150%7D%20r_%7Bx%2Ci%7D%20%3D%20%5Cfrac%7B%5Csum_%7Bu%7D%5E%7Bn%7Dsim%28x%2Cu%29r_%7Bu%2Ci%7D%7D%7B%5Csum_%7Bu%7D%5E%7Bn%7D%7Csim%28x%2Cu%29%7C%29%7D)
-ru,i=|simil(u,u')|-1simil(u, u')ru',i
-where the weights are the computed similarities between the users. In the scheme where each user’s ratings is a vector, this essentially boils down to matrix multiplication (while being careful only to consider users who had rated the particular movie in question). We consider two different measures of similarity between users: Pearson correlation and vector cosine similarity. We additionally investigate the benefits of including top-k filtering in our analysis.
+
+where the weights _sim(x,u)_ are the computed similarities between the users _x_ and _u_. In the scheme where each user’s ratings is a vector, this essentially boils down to matrix multiplication (while being careful only to consider users who had rated the particular movie in question). We consider two different measures of similarity between users: Pearson correlation and vector cosine similarity. We additionally investigate the benefits of including top-k filtering in our analysis.
 
 #### Pearson Correlation Coefficient
 When treating the users’ ratings as a vectors, it is easy to determine their similarity using the Pearson correlation coefficient. Just as the 2D version measures the correlation of two 1-D vectors, the Pearson correlation measures the covariance of two _m_-D vectors containing two separate user’s ratings. The Pearson correlation coefficient is given by:
+
 similP(x,y)=iIxy(rx,i -rx) (ry,i -ry)iIxy(rx,i -rx)2 iIxy(ry,i -ry)2 
+
 where _x_ and _y_ are different users, _I<sub>xy</sub>_ contains the movies that users x and y both rated, _r<sub>x,i</sub>_ and _r<sub>y,i</sub>_  are the ratings given to movie _i_ by user _x_ and _y_, respectively, and _r<sub>x</sub>_, _r<sub>y</sub>_ is the mean rating over all movies in set Ixy  given by user x, y.
 
 Because the Pearson correlation involves calculating the variance around the mean for each user, this metric is robust against incorrectly weighting users who routinely rate movies higher than other users. For instance, if user1 has an average rating of 4 and user2 has an average rating of 2, but they both rate movie _a_ 1 point higher than their average rating and movie _b_ 2 points lower than their average rating, they will still have a very high Pearson similarity value even though their ratings do not have the same value. 
