@@ -94,6 +94,6 @@ Suresh Kumar Gorakala, _Building Recommendation Engines_ (Birmingham, UK: Packt 
 
 James Long, "Netflix Prize and Collaborative Filtering" (lecture, Statistical Computing in R and Python, Texas A&M University, College Station, TX, March 8, 2018). https://longjp.github.io/statcomp/lectures/collab_filter.pdf
 
-Ethan Rosenthal, "Intro to Recommender Systems: Collaborative Filtering," Data Piques (blog), November 2, 2015, http://blog.ethanrosenthal.com/2015/11/02/intro-to-collaborative-filtering/.
-
 "Netflix Prize", _Netflix, Inc._, accessed April 30, 2018, https://www.netflixprize.com/. 
+
+Ethan Rosenthal, "Intro to Recommender Systems: Collaborative Filtering," Data Piques (blog), November 2, 2015, http://blog.ethanrosenthal.com/2015/11/02/intro-to-collaborative-filtering/.
