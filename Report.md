@@ -84,3 +84,15 @@ Based on our experience making these recommendation systems and testing them usi
 Despite this, there are several changes we could make to our algorithm to improve the accuracy of the predicted ratings. Instead of using only the similarities between users, we could also use the tag information on the movies to determine the similarity between items. Combining both the user-based similarity and the item-based similarity into a hybrid recommendation system may improve predictions about how a user will rate a specific movie. Our ratings matrix will also likely become more comprehensive if we add in data from more users instead of only using a subset of the data. 
 
 Overall, we have gained a greater appreciation for the existing recommendation algorithms that do a great job of matching users with relevant content. 
+
+### References
+We acknowledge the helpful advice contained in the following sources that helped us design and implement our algorithms:
+
+Michael Ekstrand, "Similarity Functions for User-User Collaborative Filtering," Grouplens (blog), October 24, 2013, https://grouplens.org/blog/similarity-functions-for-user-user-collaborative-filtering/.
+
+Suresh Kumar Gorakala, _Building Recommendation Engines_ (Birmingham, UK: Packt Publishing Ltd, 2016), https://www.packtpub.com/big-data-and-business-intelligence/building-recommendation-engines.
+
+James Long, "Netflix Prize and Collaborative Filtering" (lecture, Statistical Computing in R and Python, Texas A&M University, College Station, TX, March 8, 2018). https://longjp.github.io/statcomp/lectures/collab_filter.pdf
+
+Ethan Rosenthal, "Intro to Recommender Systems: Collaborative Filtering," Data Piques (blog), November 2, 2015, http://blog.ethanrosenthal.com/2015/11/02/intro-to-collaborative-filtering/.
+
