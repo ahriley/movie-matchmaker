@@ -27,16 +27,23 @@ t0 = datetime.datetime(year=1970, month=1, day=1)
 def randMovie(moviedf, num=25):
     rate_array, movie_index, tstamps = [], [], []
     print("For each movie, type a numeric rating (0-5) or <Enter> if you haven't seen it.")
+    print("To exit during ratings enter 'exit' or '^C")
     
     while len(rate_array) < num:
         rand = moviedf.sample()
         randtitle = rand.title.values[0]
         try:
             rating_ = input('What is your rating for "'+randtitle+'": ')
+            if rating_ == 'exit':
+                raise SystemExit
             rate_array.append(float(rating_))
             movie_index.append(int(rand.movieId.values))
             t1 = datetime.datetime.utcnow()
             tstamps.append(int((t1-t0).total_seconds()))
+        except (KeyboardInterrupt, SystemExit):
+            print()
+            print("Exiting recommendation program")
+            raise SystemExit
         except:
             pass
     
