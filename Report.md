@@ -47,7 +47,9 @@ While the Pearson correlation is robust against constant offsets in mean ratings
 
 #### Cosine Similarity
 In addition to Pearson correlation, an increasingly popular weighting method in collaborative filtering research is the cosine similarity. If each user’s ratings compose a vector in _m_-dimensional space (_m_ being the number of movies), then the cosine similarity is the cosine of the angle between the two vectors
-similC(x,y)=cos()=xy||x||||y||
+
+![equation](http://latex.codecogs.com/gif.latex?%5Cdpi%7B150%7D%20sim_%7BC%7D%28x%2Cy%29%20%3D%20cos%28%5Ctheta%29%20%3D%20%5Cfrac%7Bx%5Ccdot%20y%7D%7B%7C%7Cx%7C%7C%20%5Ctimes%20%7C%7Cy%7C%7C%7D)
+
 Now, the main difference between Pearson and cosine similarities is how to handle items that one user has rated while the other has not. Pearson, by definition, only takes into account movies that are overlapped between users. However, Cosine similarity must have the vector defined in all _m_-dimensions. So in practice, all movie ratings that would appear as _NaN_ in a ratings matrix are set to 0. Cosine similarity’s main advantage over Pearson weighting is that for our parameter space [0.0, 5.0] the allowed values for cosine range from 0 to 1, which means that there cannot be predictions that fall outside of our domain.
 
 The caveat with this approach is that it tends to dampen the similarity between two users. Imagine user1 has 20 only ratings that perfectly match user2’s, but user2 has an additional 30 ratings for movies that user1 has not rated. Each added rating from user2 adds a dimension between their vectors, increasing the angle between them, thus dampening the similarity. As a result, users with more ratings will tend to have smaller cosine similarities to all other users.
