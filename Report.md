@@ -58,7 +58,11 @@ The caveat with this approach is that it tends to dampen the similarity between 
 To further reduce the impact of users that have little similarity to each other, often algorithms will identify the _k_ most similar users to a user of interest and only use those to compute rating predictions. All of the math is the same; the difference is restricting the sum when predicting ratings to the _k_ most similar users. We implement top-k filtering and attempt to tune _k_ for each weighting scheme (both Pearson and Cosine similarity) by minimizing the MSE between the training and test samples. For simplicity, we use the already computed weights to rank the users and select the _k_ most similar users. Another popular method to select the top _k_ users is to perform a nearest neighbor search.
 
 ### Results
-To evaluate the effectiveness of our algorithm, we compute the mean squared error (MSE) between predicted ratings and the isolated test sample. As highlighted below, we find small differences between weight methods and marginal improvement from implementing top-k filtering. 
+To evaluate the effectiveness of our algorithm, we compute the mean squared error (MSE) 
+
+![equation](http://latex.codecogs.com/gif.latex?%5Cdpi%7B150%7D%20%5Cmathrm%7BMSE%7D%20%3D%20%5Cfrac%7B1%7D%7Bn%7D%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%28r_%7B%5Cmathrm%7Bpred%7D%2Ci%7D%20-%20r_%7Bi%7D%29)
+
+between predicted ratings and the isolated test sample. As highlighted below, we find small differences between weight methods and marginal improvement from implementing top-k filtering. 
 
 #### Comparing weights
 If one chose the mean rating (2.5) of the range of rating values (0.5-5) as the predicted rating for a uniformly distributed set of test ratings, one would expect a MSE of ~2.125. The Pearson correlation similarity yielded an MSE of ~0.9905, which beats the constant guessing by about a rating value of 1. Meanwhile, the cosine similarity yielded an MSE of ~0.9645, slightly better than with the Pearson correlation similarity. 
