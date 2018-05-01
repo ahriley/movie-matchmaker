@@ -11,11 +11,13 @@ def cosine_sim(df):
 def mse(pred, actual):
     pred = pred.values[actual.values > 0]
     actual = actual.values[actual.values > 0]
-    return mean_squared_error(pred, actual)
+    finite = np.isfinite(pred)
+    return mean_squared_error(pred[finite], actual[finite])
 
-def predict_full(ratings, weights):
-    pred = weights.dot(ratings) / np.array([np.abs(weights).sum(axis=1)]).T
-    return pd.DataFrame(data=pred, index=ratings.index, columns=ratings.columns)
+def predict_full(rates, weights):
+    weights = np.nan_to_num(weights)
+    pred = weights.dot(rates) / np.abs(weights).dot(rates.mask(rates>0, other=1.0))
+    return pd.DataFrame(data=pred, index=rates.index, columns=rates.columns)
 
 # TODO: don't go through numpy, just use pandas
 def train_test_split(df, empty, testfrac=0.2):
