@@ -1,5 +1,6 @@
-import pandas as pd
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.metrics import mean_squared_error
 
 def cosine_sim(df):
@@ -45,3 +46,6 @@ def train_test_split(df, empty, testfrac=0.2):
         train.replace(to_replace=0.0, value=np.nan, inplace=True)
     
     return train, test
+
+if __name__ == "__main__":
+    print("Everything looks good!")
