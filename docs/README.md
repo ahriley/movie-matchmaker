@@ -76,7 +76,7 @@ This project was created as part of the Spring 2018 course [STAT 689: Statistica
 
 We acknowledge the helpful advice contained in the following sources that helped us design and implement our algorithms:
 * Michael Ekstrand, ["Similarity Functions for User-User Collaborative Filtering,"](https://grouplens.org/blog/similarity-functions-for-user-user-collaborative-filtering/) Grouplens (blog), October 24, 2013.
-* Suresh Kumar Gorakala, [_Building Recommendation Engines_](https://www.packtpub.com/big-data-and-business-intelligence/building-recommendation-engines) (Birmingham, UK: Packt Publishing Ltd, 2016).
+* Suresh Kumar Gorakala, [_Building Recommendation Engines_](https://www.packtpub.com/big-data-and-business-intelligence/building-recommendation-engines) (Birmingham, UK: Packt Publishing Ltd), 2016.
 * James Long, ["Netflix Prize and Collaborative Filtering"](https://longjp.github.io/statcomp/lectures/collab_filter.pdf) (lecture, Statistical Computing in R and Python, Texas A&M University, College Station, TX), March 8, 2018.
 * ["Netflix Prize"](https://www.netflixprize.com/), _Netflix, Inc._, accessed April 30, 2018.
 * Ethan Rosenthal, ["Intro to Recommender Systems: Collaborative Filtering,"](http://blog.ethanrosenthal.com/2015/11/02/intro-to-collaborative-filtering/) Data Piques (blog), November 2, 2015.
