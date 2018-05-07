@@ -1,6 +1,6 @@
 # movie-matchmaker
 
-An application of collaborative filtering methods to the [MovieLens dataset](https://grouplens.org/datasets/movielens/). See the accompanying [report](docs/report.md) for more detail on the methodology used.
+An application of collaborative filtering methods to the [MovieLens dataset](https://grouplens.org/datasets/movielens/). See the accompanying [report](report.md) for more detail on the methodology used.
 
 ## Getting started
 
