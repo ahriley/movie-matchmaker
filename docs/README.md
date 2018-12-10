@@ -1,6 +1,5 @@
 # movie-matchmaker
-
-An application of collaborative filtering methods to the [MovieLens dataset](https://grouplens.org/datasets/movielens/). See the accompanying [report](report.md) for more detail on the methodology used.
+The following is the documentation for Katelyn Stringer and Alex Riley's course project for STAT 689: Statistical Computing w/ R & Python. Movie Matchmaker is an application of collaborative filtering methods to the [MovieLens dataset](https://grouplens.org/datasets/movielens/). See the accompanying [report](report.md) for more detail on the methodology used.
 
 ## Getting started
 
@@ -29,7 +28,7 @@ After this, you should be able to move into the directory
 ```
 cd path/to/movie-matchmaker
 ```
-and run `ratemovies.py` in the following manner
+and run `ratemovies.py` in the following manner. Dfine your name using the "userID" keyword, Use the "cutoff" keyword to determine how many movies you want to rate, specify the output filename using "output", and set "method" to "cosine" or "pearson" to specify which similarity metric you want to use for the ratings.
 ```
 python ratemovies.py --userId=test --cutoff=5 --output=test.csv --method=cosine
 ```
